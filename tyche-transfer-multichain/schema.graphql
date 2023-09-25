@@ -1,0 +1,18 @@
+#type Contract @entity{
+#    id:ID!
+#    address:String! @index
+#    creator: String! @index
+#    timestamp: DateTime! @index
+#    #  transfers: [Transfer!] @derivedFrom(field: "contract")
+#}
+
+type Transfer @entity {
+    id: ID!
+    network: String! @index
+    block: Int! @index
+    timestamp: DateTime! @index
+    from: String! @index
+    to: String! @index
+    tokenId: BigInt @index,
+    tx:String! @index
+}
